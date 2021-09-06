@@ -2,17 +2,17 @@
 
 
 def add(x, y):
-    return 0
+    return x + y
 
 
 def kwadraat(x):
     """Return het kwadraat van x"""
-    return 0
+    return x**2
 
 
 def oppervlakte_kubus(z):
     """Return de oppervlakte van een kubus met zijde z"""
-    return 0
+    return z*z*6
 
 
 def seconds_in_days(days=1):
@@ -21,12 +21,12 @@ def seconds_in_days(days=1):
     Als er geen parameter doorgegeven wordt, geef dan het aantal
     seconden in 1 dag terug.
     """
-    return 0
+    return days*24*3600
 
 
 def seconds_in_weeks(weeks):
     """Return het aantal seconden in 'week' weken."""
-    return 0
+    return weeks*7*24*3600
 
 
 def seconds_in_years(years):
@@ -34,7 +34,7 @@ def seconds_in_years(years):
 
     Veronderstel dat ieder jaar uit exact 52 weken bestaat.
     """
-    return 0
+    return 3600 * 24 * 7 * 52 * years
 
 
 def seconds_remaining_in_life(age, is_female=False):
@@ -43,12 +43,18 @@ def seconds_remaining_in_life(age, is_female=False):
     Ga uit van een maximale levensduur van 80 jaren voor mannen,
     en 84 jaren voor vrouwen.
     """
-    return 0
+    if is_female == True:
+       f =  3600 * 24 * 7 * 52 * (84 - age)
+    else:
+         f =  3600 * 24 * 7 * 52 * (80 - age)
+    return f
 
 
 def postcodes():
     """Return een dictionary met postcodes"""
-    return 0
+    if v == postcode(3650)
+    return "Dilsen-Stokkem"
+
 
 
 def oneven_getallen(x):
