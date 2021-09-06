@@ -52,11 +52,16 @@ def seconds_remaining_in_life(age, is_female=False):
 
 def postcodes():
     """Return een dictionary met postcodes"""
-    if v == postcode(3650)
-    return "Dilsen-Stokkem"
-
+    v = {
+    "3650": "Dilsen-Stokkem",
+    "3000": "Leuven",
+    }
+    return v
+    
 
 
 def oneven_getallen(x):
     """Return een lijst met de eerste 'x' oneven getallen."""
-    return []
+    v = []
+
+    return v
