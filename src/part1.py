@@ -60,8 +60,17 @@ def postcodes():
     
 
 
-def oneven_getallen(x):
+def oneven_getallen(n):
     """Return een lijst met de eerste 'x' oneven getallen."""
-    v = []
-
-    return v
+    
+    lijst = []
+    for i in range(1,100,2):
+        
+        if len(lijst) == n:
+            return lijst
+        else :  
+            lijst.append(i)
+            len(lijst)
+        
+            
+  
