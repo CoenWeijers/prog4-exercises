@@ -1,6 +1,6 @@
 def raise_exception():
     """Raise exceptie RuntimeError"""
-    pass
+    raise RuntimeError("lengte fout")
 
 
 def raise_exception_on_negative(x):

@@ -62,14 +62,13 @@ def sum_numbers_from_file(filename):
     >> print(v) # toont 128
     """
 
+    sum = 0
     f = open(filename, "rt")
     lines = f.readlines()
     for i in lines:
-        int(i)
-
-
+        sum = sum + int(i)
     f.close()
-    return None
+    return sum
 
 
 def sum_two_columns_of_numbers_from_file(filename):
@@ -89,7 +88,14 @@ def sum_two_columns_of_numbers_from_file(filename):
     >> v = sum_two_columns_of_numbers_from_file('getallen.txt')
     >> print(v) # toont (27, 104)
     """
-    return None
+    
+    sum = 0
+    f = open(filename, "rt")
+    lines = f.readlines()
+    for i in lines:
+        sum = sum + int(i)
+    f.close()
+    return sum
 
 
 def count_words_from_file(filename):

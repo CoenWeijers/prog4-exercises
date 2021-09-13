@@ -3,6 +3,10 @@
 
 def list_search(l, value):
     """Return the index of the value in the list"""
+    l = []
+    l.index()
+
+    list_search.index(value)
     return 0
 
 
