@@ -1,6 +1,10 @@
 def write_rick_and_morty(filename):
     """Schrijf de tekst "Rick and Morty" naar het tekstbestand met naam filename"""
-    return None
+    bestand = open(filename, "wt")
+    bestand.write("Rick and Morty")
+    bestand.close() 
+
+    return filename
 
 
 def write_numbers(filename):
@@ -15,7 +19,11 @@ def write_numbers(filename):
     ...
     99
     """
-    return None
+    f = open(filename, "wt")
+    for i in range(0, 100):
+     f.write(str(i)+"\n")
+    f.close()
+    return f
 
 
 def write_numbers_and_squares(filename):
@@ -31,7 +39,12 @@ def write_numbers_and_squares(filename):
     4,16
     ...
     """
-    return None
+    f = open(filename, "wt")
+    for i in range(0, 100):
+        f.write(str(i)+","+str(i**2)+"\n")
+    f.close()
+    return f
+
 
 
 def sum_numbers_from_file(filename):
@@ -48,6 +61,14 @@ def sum_numbers_from_file(filename):
     >> v = read_numbers('getallen.txt')
     >> print(v) # toont 128
     """
+
+    f = open(filename, "rt")
+    lines = f.readlines()
+    for i in lines:
+        int(i)
+
+
+    f.close()
     return None
 
 
