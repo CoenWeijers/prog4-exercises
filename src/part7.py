@@ -100,7 +100,13 @@ def sum_two_columns_of_numbers_from_file(filename):
 
 def count_words_from_file(filename):
     """Geef het aantal woorden terug in bestand met naam filename"""
-    return None
+    n = 0
+    with open(filename, "rt") as f:
+        lines = f.readlines()
+        for l in lines:
+            words = l.split()
+            n += len(words)
+    return n
 
 
 def count_word_frequency_from_file(filename):
@@ -123,4 +129,17 @@ def count_word_frequency_from_file(filename):
     - verwijder alle leestekens, zeker ",.?"
     - verwijder de newlines '\\n' mbv de method strip()
     """
-    return None
+    freq = {}
+    with open(filename, "rt") as f:
+        lines = f.readlines()
+        for l in lines:
+            l = l.strip()
+            l = l.lower()
+            l = l.replace(",", " ").replace("?", " ").replace(".", " ")
+            words = l.split()
+            for w in words:
+                if w in freq:
+                    freq[w] += 1
+                else:
+                    freq[w] = 1
+    return freq
