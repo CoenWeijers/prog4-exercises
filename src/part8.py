@@ -20,14 +20,15 @@ def handle_exception(x, y):
     Als y 0 is krijg je een ZeroDivisionError exceptie, verwerk deze
     met try/except en geef dan None terug.
     """
-    if y== 0:
-     raise ZeroDivisionError()
-    return x/y
-try:
-    b = x/y
-    print(b)
+#     if y== 0:
+#      raise ZeroDivisionError()
+#     return x/y
+# try:
+#     b = x/y
+#     print(b)
 
-except:
+# except:
+pass
 
 
 def raise_custom_exception():

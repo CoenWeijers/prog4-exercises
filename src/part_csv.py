@@ -12,7 +12,15 @@ def determine_total_cases(age_category, gender):
     determine_total_cases("20-29", "M") geeft het aantal besmettingen van mannen tussen de 20 en 29 jaar oud
     terug. 
     """
+    import csv
+    f = open("COVID19BE_CASES_AGESEX.csv", "r")
+    reader = csv.reader(f)
+    for row in reader:
+      print(row)
+
     return 0
+
+determine_total_cases("10-19", "M")
 
 
 
