@@ -7,9 +7,26 @@ def maak_videokaart_dict(merk, naam, architectuur, geheugen, busbreedte, diesize
     {'merk': 'NVIDIA', 'naam': "RTX 3080", 'architectuur': "Ampere", 'geheugen': 10, 'busbreedte': 320, 'diesize': 628, "jaar": 2020}
     """
 
+    videokaarten = { "merk":merk,
+                     "naam":naam,
+                     "architectuur":architectuur,
+                     "geheugen":geheugen,
+                     "busbreedte":busbreedte,
+                     "diesize":diesize,
+                     "jaar":jaar,
+                    }
+
+    return videokaarten
+
 
 def tel_videokaarten(lijst_videokaarten):
     """Geef het totaal aantal videokaarten in de lijst van videokaarten terug."""
+
+    
+    totaalvideokaarten = len(lijst_videokaarten)
+
+    return totaalvideokaarten
+
 
 
 def tel_videokaarten_per_merk(lijst_videokaarten):
@@ -23,6 +40,20 @@ def tel_videokaarten_per_merk(lijst_videokaarten):
     Met x het aantal AMD videokaarten in de lijst en y het aantal NVIDIA
     videokaarten in de lijst.
     """
+    telleramd = 0
+    tellernvidia = 0
+
+    for videokaart in lijst_videokaarten:
+        if videokaart["merk"] == "AMD":
+            telleramd += 1
+        if videokaart["merk"] == "NVIDIA" :
+            tellernvidia +=1
+
+    dict = {"AMD": telleramd,
+                "NVIDIA": tellernvidia,
+                }
+        
+    return dict
 
 
 def grootste_videokaart(lijst_videokaarten):
@@ -33,6 +64,16 @@ def grootste_videokaart(lijst_videokaarten):
     >>> grootste_videokaart([{'naam': 'RTX 3080', 'diesize': 628}])
     RTX 3080
     """
+    grootste = 0
+    naamgrootestekaart = None
+    for videokaart in lijst_videokaarten:
+        if videokaart["diesize"] >= grootste:
+            grootste = videokaart["diesize"]
+            naamgrootestekaart = videokaart["naam"]    
+    return naamgrootestekaart
+
+
+
 
 
 def grootste_videokaartgrootte_per_merk(lijst_videokaarten):
@@ -43,6 +84,15 @@ def grootste_videokaartgrootte_per_merk(lijst_videokaarten):
     >>> grootste_videokaartgrootte_per_merk([{'naam': 'RTX 3080', 'diesize': 628}])
     {'AMD': 0, 'NVIDIA': 628}
     """
+    grootsteNVIDIA = 0
+    grootsteAMD = 0
+    
+    for videokaart in lijst_videokaarten:
+        if videokaart["merk"] == "AMD":
+            if videokaart["diesize"] >= grootsteAMD:
+                grootsteAMD = videokaart["diesize"]
+        if
+
 
 
 def diesizes_videokaarten(lijst_videokaarten):

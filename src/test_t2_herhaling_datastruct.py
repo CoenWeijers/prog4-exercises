@@ -15,6 +15,7 @@ def test_maak_videokaart_dict_rtx3080():
         "diesize": 628,
         "jaar": 2020,
     }
+    
     assert result == expected
 
 
