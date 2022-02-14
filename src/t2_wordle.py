@@ -1,4 +1,5 @@
 import datetime
+from operator import length_hint
 import random
 import re
 
@@ -7,10 +8,18 @@ from rich import print
 
 def choose_word(words):
     """Een functie die een willekeurig woord uit een lijst kiest"""
+    a = words
+    return random.choice(a)
 
 
 def lines_to_words(lines):
     """Een functie die de newlines uit een lijst strings verwijdert"""
+
+    a = []
+    for l in lines:
+        a.append(l.strip())
+        return a
+
 
 
 def process_words(words, length):
@@ -20,6 +29,25 @@ def process_words(words, length):
     - woorden van de juiste lengte
     - woorden zonder: koppeltekens, spaties, hoofdletters, punten, quotes
     """
+    
+    a = []
+    for w in words:
+        if len(w) != length:
+            continue
+        if " " in w: 
+            continue
+        if "." in w: 
+            continue
+        if "-" in w:
+            continue
+        if "''" in w:
+            continue
+        if w.isupper() and w.istitle(): 
+            continue
+
+    
+
+
 
 
 def combine_letters_of_words(word1, word2):
@@ -67,45 +95,45 @@ if __name__ == "__main__":
 
     # lees de woordlijst in
     filename = "wordlist.txt"
-    f = ...
+    # f = ...
 
-    lines = ...
+    # lines = ...
 
-    # gebruik lines_to_words en
-    # process_words om een lijst met
-    # woorden van lengte 5 te verkrijgen
-    words = ...
-    words = ...
+    # # gebruik lines_to_words en
+    # # process_words om een lijst met
+    # # woorden van lengte 5 te verkrijgen
+    # words = ...
+    # words = ...
 
-    # kies een willekeurig woord mbv choose_word
-    secret_word = ...
+    # # kies een willekeurig woord mbv choose_word
+    # secret_word = ...
 
-    counter = 1
-    while counter < 6:
-        # vraag de gebruiker om een gok te wagen
-        w = input("?")
+    # counter = 1
+    # while counter < 6:
+    #     # vraag de gebruiker om een gok te wagen
+    #     w = input("?")
 
-        # als de gebruiker "stop" ingeeft beeindig het programma dan
-        # gebruik hiervoor het break statement
-        if ...
+    #     # als de gebruiker "stop" ingeeft beeindig het programma dan
+    #     # gebruik hiervoor het break statement
+    #     # if ...
 
-        # als het woord geen 5 letters lang is, sla dit woord dan over
-        # gebruik hiervoor het continue statement
-        if ...
+    #     # als het woord geen 5 letters lang is, sla dit woord dan over
+    #     # gebruik hiervoor het continue statement
+    #     #if ...
 
-        # controlleer of het woord correct is, en druk het woord in kleur
-        # op het scherm af gebruik makend van combine_letters_of_words en
-        # print_letter
-        for a, b in ...
-            letter = ...
-            print(letter, end="")
-        print()
-        counter += 1
+    #     # controlleer of het woord correct is, en druk het woord in kleur
+    #     # op het scherm af gebruik makend van combine_letters_of_words en
+    #     # print_letter
+    #    # for a, b in ...
+    #     #     letter = ...
+    #     #     print(letter, end="")
+    #     # print()
+    #     # counter += 1
 
-        # als het woord correct geraden werd
-        # toon dan een overwinningsboodschap
-        if ...
+    #     # als het woord correct geraden werd
+    #     # toon dan een overwinningsboodschap
+    #     # if ...
 
-    # toon hoeveel pogingen nodig waren om het woord juist te raden
-    ...
+    # # toon hoeveel pogingen nodig waren om het woord juist te raden
+    # ...
 

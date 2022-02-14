@@ -84,14 +84,18 @@ def grootste_videokaartgrootte_per_merk(lijst_videokaarten):
     >>> grootste_videokaartgrootte_per_merk([{'merk': 'NVIDIA', 'naam': 'RTX 3080', 'diesize': 628}])
     {'AMD': 0, 'NVIDIA': 628}
     """
-    grootsteNVIDIA = 0
-    grootsteAMD = 0
+    grootte = {'AMD': 0, 'NVIDIA' : 0}
     
     for videokaart in lijst_videokaarten:
         if videokaart["merk"] == "AMD":
-            if videokaart["diesize"] >= grootsteAMD:
-                grootsteAMD = videokaart["diesize"]
-        if
+            if videokaart["diesize"] > grootte["AMD"]:
+                grootte["AMD"] = videokaart["diesize"]
+
+        if videokaart["merk"] == "NVIDIA":
+            if videokaart["diesize"] > grootte['NVIDIA']:
+                grootte["NVIDIA"] = videokaart["diesize"]
+    
+    return grootte
 
 
 
@@ -104,6 +108,14 @@ def diesizes_videokaarten(lijst_videokaarten):
     [500, 300]
     """
 
+    diesizes = []
+    
+    for GPU in lijst_videokaarten:
+        die = GPU['diesize']
+        diesizes.append(die)
+        
+    return diesizes
+
 
 def gemiddelde_diesize_videokaarten(lijst_videokaarten):
     """Gegeven een lijst van dictionaries met informatie over videokaarten,
@@ -113,6 +125,14 @@ def gemiddelde_diesize_videokaarten(lijst_videokaarten):
     >>> gemiddelde_diesize_videokaarten([{"diesize": 500}, {"diesize": 300}])
     400.0
     """
+    som = 0
+    for GPU in lijst_videokaarten:
+        som += GPU["diesize"]
+        gem = som/len(lijst_videokaarten)
+
+    return gem
+
+
 
 
 def jaren_videokaarten(lijst_videokaarten):
@@ -123,6 +143,14 @@ def jaren_videokaarten(lijst_videokaarten):
     >>> jaren_videokaarten([{"jaar": 2020, "diesize": 500}, {"jaar": 2021, "diesize": 300}])
     [2020, 2021]
     """
+    jaar = []
+
+    for GPU in lijst_videokaarten:
+        jaartal = GPU["jaar"]
+        jaar.append(jaartal)
+    return jaar
+
+
 
 
 def videokaarten_voor_jaar(lijst_videokaarten, jaar):
@@ -144,3 +172,8 @@ def grootste_geheugen_per_jaar(lijst_videokaarten):
     >>> grootste_geheugen_per_jaar([{"jaar": 2020, "geheugen": 4}, {"jaar": 2021, "geheugen": 8}])
     {2020: 4, 2021: 8}
     """
+    GPUjaar = []
+    for GPU in lijst_videokaarten:
+        if GPU["jaar"] == jaar:
+            GPUjaar.append(GPU)
+    return GPUjaar
